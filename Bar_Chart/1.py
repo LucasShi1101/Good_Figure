@@ -9,7 +9,7 @@ plt.rcParams['font.serif'] = ['Times New Roman'] + plt.rcParams['font.serif']
 plt.rcParams['axes.unicode_minus'] = False 
 
 # --- 2. 数据准备 ---
-labels = ['FLUX.1 Dev', 'AltDiffusion', 'Show-o2']
+labels = ['a', 'b', 'c']
 base_models_scores = [275, 247, 134]
 aligned_models_scores = [62, 64, 58]
 diffs = [-213, -183, -76] 
@@ -39,7 +39,7 @@ for spine in ax.spines.values():
     spine.set_edgecolor('black')
 
 # 4.3 坐标轴细节调整
-ax.set_ylabel('Number of Nudity Detected', fontsize=22)
+ax.set_ylabel('Number of Detected', fontsize=22)
 ax.set_xticks(x)
 ax.set_xticklabels(labels, fontsize=22)
 ax.set_ylim(0, 300) 
@@ -61,7 +61,6 @@ for i in range(len(labels)):
     # 顶部和底部的红短横线
     line_w = 0.06
     ax.plot([x_pos - line_w, x_pos + line_w], [top_y, top_y], color='#C00100', lw=2, zorder=7)
-    # ax.plot([x_pos - line_w, x_pos + line_w], [target_y, target_y], color='#C00100', lw=2, zorder=7)
     
     # 垂直贯穿箭头
     ax.annotate('', 
